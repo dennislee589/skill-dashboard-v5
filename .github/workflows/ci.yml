@@ -1,0 +1,15 @@
+name: CI 檢查
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 檢出程式碼
+        uses: actions/checkout@v4
+
+      - name: 檢查 JavaScript 檔案語法
+        run: node -c data.js
